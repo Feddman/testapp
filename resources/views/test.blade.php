@@ -1,15 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    @vite('resources/css/app.css')
-    @livewireStyles
-</head>
-<body>
-    <div class="w-3/4 mx-auto mt-4">
+@extends('app')
+
+@section('content')
         <h3 class="text-2xl mb-2">Abonneer op de nieuwsbrief!</h3>
         <form class="w-1/4" method="POST" action="{{ route('newsletter.store') }}">
             @csrf
@@ -22,13 +13,5 @@
 
               <button type="submit" class="bg-green-500 hover:bg-green-600 text-white rounded-md py-2 px-4 focus:outline-none focus:ring focus:ring-green-200 focus:border-green-500">Submit</button>
             </div>
-
-
         </form>
-
-        @livewire('subscriber-list', ['subs' => $subs])
-
-    </div>
-    @livewireScripts
-</body>
-</html>
+@endsection
