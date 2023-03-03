@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\NewslettersController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ProductsController;
@@ -18,6 +19,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PagesController::class, 'home']);
 Route::get('/test', [PagesController::class, 'test']);
+
 Route::resource('products', ProductsController::class);
+Route::resource('categories', CategoriesController::class);
 
 Route::post('/newsletter', [NewslettersController::class, 'store'])->name('newsletter.store');

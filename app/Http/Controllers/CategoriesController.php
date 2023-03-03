@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
-class ProductsController extends Controller
+class CategoriesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,11 +14,9 @@ class ProductsController extends Controller
      */
     public function index()
     {
-
-        return view('products/index', [
-            'products' => Product::all()
+        return view('categories.index', [
+            'categories' => Category::all()
         ]);
-
     }
 
     /**
